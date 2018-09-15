@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>数组去重</title>
+    <script>
+        // 从排序好的数组中删除重复的数，返回新数组的长度
+        // 方式一：将数组转为集合，再转为数组，便实现了去重
+        var array = [1,1,2];
+        function array_deweighting(arr){
+            return new Set(arr).size;
+        }
+        //方式二：利用双重循环删除重复的元素
+        function arrayDeweighting(arr){
+            for(let i = 0; i < arr.length - 1; i++)
+            for(let j = i+1; j < arr.length; j++)
+            if(arr[i] == arr[j]) arr.splice(j--,1);
+            return arr.length;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
